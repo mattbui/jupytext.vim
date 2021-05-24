@@ -85,6 +85,10 @@
 "       that the jupytext utility accepts for its `--to` parameter (see
 "       `jupytext --help`), except for 'notebook' and 'ipynb'.
 "
+"    *  let g:jupytext_opts = ''
+"
+"       Command line options for the conversion to g:jupytext_fmt
+"
 "    *  let g:jupytext_to_ipynb_opts = '--to=ipynb --update'
 "
 "       Command line options for the conversion from g:jupytext_fmt back to
@@ -180,6 +184,10 @@ endif
 
 if !exists('g:jupytext_fmt')
     let g:jupytext_fmt = 'md'
+endif
+
+if !exists('g:jupytext_opts')
+    let g:jupytext_opts = ''
 endif
 
 if !exists('g:jupytext_to_ipynb_opts')

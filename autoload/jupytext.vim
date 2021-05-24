@@ -103,7 +103,7 @@ function jupytext#read_from_ipynb()
         call s:debugmsg("Generate file ".b:jupytext_file)
         let l:cmd = g:jupytext_command." --to=".g:jupytext_fmt
         \         . " --output=".shellescape(b:jupytext_file) . " "
-        \         . shellescape(l:filename)
+        \         . g:jupytext_opts . " ". shellescape(l:filename)
         call s:debugmsg("cmd: ".l:cmd)
         let l:output=system(l:cmd)
         call s:debugmsg(l:output)
